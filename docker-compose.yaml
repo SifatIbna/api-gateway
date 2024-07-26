@@ -1,0 +1,12 @@
+services:
+  nginx:
+    container_name: api-gateway-nginx
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/etc/nginx/
+      - ./logs:/var/log/nginx
+    restart: unless-stopped
