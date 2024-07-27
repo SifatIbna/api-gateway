@@ -10,3 +10,5 @@ services:
       - ./:/etc/nginx/
       - ./logs:/var/log/nginx
     restart: unless-stopped
+    command: >
+      bash -c "/etc/nginx/nginx-reload.sh & nginx -g 'daemon off;'"

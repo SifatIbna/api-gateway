@@ -8,6 +8,3 @@ RUN apt-get update \
 RUN rm /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
-
-COPY nginx-reload.sh /usr/local/bin/nginx-reload.sh
-CMD ["sh", "-c", "/usr/local/bin/nginx-reload.sh & nginx -g 'daemon off;'"]
